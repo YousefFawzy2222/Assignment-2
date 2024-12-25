@@ -1,0 +1,11 @@
+# Use a base image for IIS with ASP.NET installed
+FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
+
+# Set the working directory
+WORKDIR /inetpub/wwwroot
+
+# Copy the SOAPService files into the container
+COPY ./SOAPService .
+
+# Expose the port for the SOAP service
+EXPOSE 80
